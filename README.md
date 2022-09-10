@@ -21,3 +21,9 @@ Let's start with some Cisco docs. 
 [**https://community.cisco.com/t5/data-center-and-cloud-knowledge-base/cisco-aci-cli-commands-quot-cheat-sheet-quot/ta-p/3145799**](https://community.cisco.com/t5/data-center-and-cloud-knowledge-base/cisco-aci-cli-commands-quot-cheat-sheet-quot/ta-p/3145799)
 
 ---
+
+### APIC Commands
+
+All run directly from the APIC CLI which requires a user to have a minimum of **admin/read-all** for their role/permissions
+
+<table><tbody><tr><td><strong>Command</strong></td><td><strong>Arguments</strong></td><td><strong>Notes</strong></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table>
