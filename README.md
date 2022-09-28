@@ -14,7 +14,7 @@ Let's start with some Cisco docs. 
 
 [**ACI CLI Cheat Sheet (from the Cisco Community)**](https://community.cisco.com/t5/data-center-and-cloud-knowledge-base/cisco-aci-cli-commands-quot-cheat-sheet-quot/ta-p/3145799)
 
-> **There will be overlap with these in the following sections, but I aim to summarise the commands I use most with additional information and explanations.**
+> There will be overlap with these in the following sections, but I aim to summarise the commands I use most with additional information and explanations.
 
 ---
 
