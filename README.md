@@ -70,7 +70,7 @@ Example from APIC:
 fabric 101 show bgp ipv4 unicast vrf AAA:PROD_VRF
 ```
 
-### Additional APIC Commands
+### APIC Commands
 
 Show vpc mappings across fabric (policy group - pc id - vpc -id - ports - leafs)
 
@@ -83,3 +83,22 @@ Show running config on leaf (of limited use, but interesting!)
 ```
 show running-config leaf 101
 ```
+
+### Moquery
+
+A CLI based tool running on the APIC to query the fabric via the REST API. This is a massive subject, and this article is a great starting point:
+
+https://learnwithsalman.com/aci-moquery/
+
+Some commands I use regularly:
+
+Find where vlan encaps are used on the fabric 
+```
+moquery -c fvIfConn | grep dn | egrep '\[vlan-210\]'
+```
+
+Display all instances of active faults for a given code:
+```
+moquery -c faultInst -f 'fault.Inst.code=="F0467"'
+```
+
