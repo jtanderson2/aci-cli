@@ -139,20 +139,18 @@ fabric 101 show bgp ipv4 unicast vrf AAA:PROD_VRF
 ```
 
 ---
-### iPing and iTraceroute
+### iPing
 
-Traditional ping and traceroute from the switches only work in mgmt tenant/VRF. For any other VRF, you need to use iping and itraceroute (assumes valid L3 interface in VRF):
-
-iping example from leafs:
+Traditional ping from the switches only work in mgmt tenant/VRF. For any other VRF, you need to use iping (assumes valid L3 interface in VRF):
 
 ```
 iping -V AAA:EXT_VRF 1.1.1.1
-```
 
-itraceroute example from leafs:
+! add source interface or ip
+iping -V AAA:EXT_VRF -S 2.2.2.2 1.1.1.1
+iping -V AAA:EXT_VRF -S vlan123 1.1.1.1
 
 ```
-TBA, it's pretty dumb!
 
 ---
 ### Moquery
