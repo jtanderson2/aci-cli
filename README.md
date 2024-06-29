@@ -4,7 +4,7 @@ CLI commands to run from the APIC or switches to glean information around the co
 
 > NOTE: The emulated NXOS running on the APIC can be used for configuration purposes, though due to the complex underlying obect model it's easy to get in a muddle! My advice, stick to the GUI for configuration until you're ready to use the API!
 
-Work in Progress....
+Far from comprehensive, work in progress...
 
 ---
 
