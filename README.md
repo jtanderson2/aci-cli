@@ -141,14 +141,14 @@ fabric 101 show bgp ipv4 unicast vrf AAA:PROD_VRF
 ---
 ### iPing
 
-Traditional ping from the switches only work in mgmt tenant/VRF. For any other VRF, you need to use iping (assumes valid L3 interface in VRF):
+Traditional pings from the switches only work in mgmt tenant/VRF. For any other VRF, you need to use iping (assumes valid L3 interface in VRF):
 
 ```
-iping -V AAA:EXT_VRF 1.1.1.1
+iping -V AAA:PROD_VRF 1.1.1.1
 
-! add source interface or ip
-iping -V AAA:EXT_VRF -S 2.2.2.2 1.1.1.1
-iping -V AAA:EXT_VRF -S vlan123 1.1.1.1
+! add source ip or interface
+iping -V AAA:PROD_VRF -S 2.2.2.2 1.1.1.1
+iping -V AAA:PROD_VRF -S vlan123 1.1.1.1
 
 ```
 
