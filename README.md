@@ -27,7 +27,7 @@ Show overview of APICs and their health:
 show controller
 ```
 
-Show detailed information fo APICs and cluster info; useful for troublshooting cluster issues:
+Show detailed information fo APICs and cluster info; useful for troubleshooting cluster issues:
 
 ```
 acidiag avread
