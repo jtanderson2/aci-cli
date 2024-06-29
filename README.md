@@ -6,24 +6,40 @@ Useful CLI commands to run from the APIC or switches to glean information around
 
 ---
 
-### APIC CLI Commands
+### NXOS L1/L2 show commands
 
-All run directly from the APIC CLI which requires a user to have a minimum of **admin/read-all** for their role/permissions.
+Many standard nxos commands work on the leaf switches or can be run from the apic when proceeding with 'fabric <node-id>'
 
-> Note the APIC CLI is emulated NXOS so many commands blah. It is also perfectly possible to configure ACI using the APCI CLI though this guide is focussed on information gathering and troubleshooting commands.
+Examples from leafs:
 
-<table><tbody><tr><td><strong>Command</strong></td><td><strong>Arguments</strong></td><td><strong>Notes</strong></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table>
+...
+show port-channel summary
+show interface ethernet 1/24
+show mac address-table interface ethernet 1/24
+...
 
-tbc
+Example from APIC
 
----
+...
+fabric 101 show port-channel summary
+...
 
-### Switch CLI Commands
+Any commands that output a vlan (eg show mac address-table) will be referencing the internal vlan and not the encap used on leaf ports; use the follow command to translate:
 
-tbc
+...
+show system internal epm vlan 20
 
----
++----------+---------+-----------------+----------+------+----------+-----------
+   VLAN ID    Type      Access Encap     Fabric    H/W id  BD VLAN    Endpoint
+                        (Type Value)     Encap                          Count
++----------+---------+-----------------+----------+------+----------+-----------
+ 20           FD vlan 802.1Q         22 10413      55     14         5
+...
 
-### Moquery
+Where:
+- VLAN ID = internal VLAN
+- Access  Encap = vlan used on leaf ports
+- Fabric encap = VXLAN Network Identifier (VNID)
 
-tbc
+
+
