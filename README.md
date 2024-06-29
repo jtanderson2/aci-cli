@@ -72,7 +72,7 @@ fabric 101 show bgp ipv4 unicast vrf AAA:PROD_VRF
 
 ### APIC Commands
 
-Displays the address and state of switch registered with the fabric (useful to gain a quick snapshot of your fabric)
+Displays the address and state of switch registered with the fabric (useful to gain a quick snapshot of your fabric):
 
 ```
 acidiag fnvread
@@ -81,9 +81,20 @@ acidiag fnvread
 --------------------------------------------------------------------------------------------------------------
      101        1         AAALSW101      F123456789   10.0.152.66/32    leaf         active   0
      102        1         AAALSW102      G123456789   10.0.152.64/32    leaf         active   0
-     201        1         AAASSW201      H123456789  10.0.152.65/32     spine        active   0
+     201        1         AAASSW201      H123456789   10.0.152.65/32    spine        active   0
 ```
 
+Show overview of APICs and their health:
+
+```
+show controller
+```
+
+Show detailed information fo APICs and cluster info; useful for troublshooting cluster issues:
+
+```
+acidiag avread
+```
 
 Show vpc mappings across fabric (policy group - pc id - vpc -id - ports - leafs)
 
@@ -97,13 +108,25 @@ Show running config on leaf (of limited use, but interesting!):
 show running-config leaf 101
 ```
 
+Show physical domains, associated VLANs and which EPGs are using them:
+
+```
+show vlan-domain
+show vlan-domain name BOB_PD
+show vlan-domain name BOB_PD details
+```
+
+Show VMM domain EPGs and VLANS:
+
+```
+show vmware domain name AAAVDS101 epg
+```
+
 ### Moquery
 
-A CLI based tool running on the APIC to query the fabric via the REST API. This is a massive subject, and this article is a great starting point:
+A CLI based tool running on the APIC to query the fabric via the REST API. This is a massive subject; this article is a great starting point and below a few examples I use regularly:
 
 https://learnwithsalman.com/aci-moquery/
-
-Some commands I use regularly:
 
 Find where vlan encaps are used on the fabric (with regex matching which can be used with egrep and any APIC command):
 ```
