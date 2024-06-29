@@ -72,7 +72,7 @@ fabric 101 show bgp ipv4 unicast vrf AAA:PROD_VRF
 
 ### APIC Commands
 
-Displays the address and state of switch registered with the fabric (useful to gain a quick snapshot of your fabric):
+Display the address and state of nodes registered with the fabric (useful to gain a quick snapshot):
 
 ```
 acidiag fnvread
