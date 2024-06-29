@@ -51,7 +51,7 @@ show system internal epm endpoint all
 
 ### NXOS L3 show commands
 
-VRF format is "<TENANT>:<VRF>", except when running show commands in the underlay network, where it is just 'overlay-1' (obviously :-) 
+VRF format is \<TENANT\>:\<\VRF\>\, except when running show commands in the underlay network, where it is just 'overlay-1' (obviously :-) 
 
 Examples from leafs:
 
