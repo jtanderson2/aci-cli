@@ -7,7 +7,71 @@ CLI commands to run from the APIC or switches to glean information around the co
 Far from comprehensive, work in progress...
 
 ---
+### APIC Commands
 
+Display the address and state of nodes registered with the fabric (useful to gain a quick snapshot):
+
+```
+acidiag fnvread
+
+      ID   Pod ID                 Name    Serial Number         IP Address    Role        State   LastUpdMsgId
+--------------------------------------------------------------------------------------------------------------
+     101        1         AAALSW101      F123456789   10.0.152.66/32    leaf         active   0
+     102        1         AAALSW102      G123456789   10.0.152.64/32    leaf         active   0
+     201        1         AAASSW201      H123456789   10.0.152.65/32    spine        active   0
+```
+
+Show overview of APICs and their health:
+
+```
+show controller
+```
+
+Show detailed information fo APICs and cluster info; useful for troublshooting cluster issues:
+
+```
+acidiag avread
+```
+
+Show tenant info:
+
+```
+show tenant
+```
+
+Show VRFs and associated tenants:
+
+```
+show vrf
+```
+
+Show VPC mappings across fabric (policy group - pc id - vpc id - ports - leafs):
+
+```
+show vpc map
+```
+
+Show running config on leaf (of limited use, but interesting!):
+
+```
+show running-config leaf 101
+```
+
+Show physical domains, associated VLANs and which EPGs are using them:
+
+```
+show vlan-domain
+show vlan-domain name BOB_PD
+show vlan-domain name BOB_PD detail
+```
+
+Show VMM domain EPGs and VLANS:
+
+```
+show vmware domain name AAAVDS101 epg
+```
+
+---
 ### NXOS L1/L2 show commands
 
 Many standard nxos commands work on the leaf switches or can be run from the apic when proceeding with 'fabric \<node-id\>'
@@ -49,6 +113,7 @@ Show detailed information about endpoints; 'all' can be replaced with 'ip, mac, 
 show system internal epm endpoint all 
 ```
 
+---
 ### NXOS L3 show commands
 
 VRF format is \<TENANT\>:\<VRF\>, except when running show commands in the underlay network, where it is just 'overlay-1' (obviously :-) 
@@ -70,58 +135,7 @@ Example from APIC:
 fabric 101 show bgp ipv4 unicast vrf AAA:PROD_VRF
 ```
 
-### APIC Commands
-
-Display the address and state of nodes registered with the fabric (useful to gain a quick snapshot):
-
-```
-acidiag fnvread
-
-      ID   Pod ID                 Name    Serial Number         IP Address    Role        State   LastUpdMsgId
---------------------------------------------------------------------------------------------------------------
-     101        1         AAALSW101      F123456789   10.0.152.66/32    leaf         active   0
-     102        1         AAALSW102      G123456789   10.0.152.64/32    leaf         active   0
-     201        1         AAASSW201      H123456789   10.0.152.65/32    spine        active   0
-```
-
-Show overview of APICs and their health:
-
-```
-show controller
-```
-
-Show detailed information fo APICs and cluster info; useful for troublshooting cluster issues:
-
-```
-acidiag avread
-```
-
-Show VPC mappings across fabric (policy group - pc id - vpc id - ports - leafs):
-
-```
-show vpc map
-```
-
-Show running config on leaf (of limited use, but interesting!):
-
-```
-show running-config leaf 101
-```
-
-Show physical domains, associated VLANs and which EPGs are using them:
-
-```
-show vlan-domain
-show vlan-domain name BOB_PD
-show vlan-domain name BOB_PD detail
-```
-
-Show VMM domain EPGs and VLANS:
-
-```
-show vmware domain name AAAVDS101 epg
-```
-
+---
 ### Moquery
 
 A CLI based tool running on the APIC to query the fabric via the REST API. This is a massive subject; this article is a great starting point and below a few examples I use regularly:
