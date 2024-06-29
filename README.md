@@ -10,7 +10,7 @@ Work in Progress....
 
 ### NXOS L1/L2 show commands
 
-Many standard nxos commands work on the leaf switches or can be run from the apic when proceeding with 'fabric <node-id>'
+Many standard nxos commands work on the leaf switches or can be run from the apic when proceeding with 'fabric \<node-id\>'
 
 Examples from leafs:
 
