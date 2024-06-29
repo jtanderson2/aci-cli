@@ -159,7 +159,7 @@ A CLI based tool running on the APIC to query the fabric via the REST API. This 
 
 https://learnwithsalman.com/aci-moquery/
 
-Find where vlan encaps are used on the fabric (with regex matching which can be used with egrep and any APIC command):
+Find where vlan encaps are used on the fabric (with regex matching which can be used with egrep on any APIC command):
 ```
 ! match any vlan starting 21
 moquery -c fvIfConn | grep dn | egrep 'vlan-21'
