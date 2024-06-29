@@ -74,7 +74,7 @@ show vmware domain name AAAVDS101 epg
 ---
 ### NXOS L1/L2 show commands
 
-Many standard nxos commands work on the leaf switches or can be run from the apic when proceeding with 'fabric \<node-id\>'
+Many standard nxos commands work on the leaf switches or can be run from the APIC when proceeding with 'fabric \<node-id\>'
 
 Examples from leafs:
 
@@ -127,6 +127,9 @@ show bgp ipv4 unicast vrf AAA:PROD_VRF
 show bgp ipv4 unicast summary vrf AAA:PROD_VRF
 show bgp ipv4 unicast neighbors 1.1.1.1 advertised-routes vrf AAA:PROD_VRF
 show bgp ipv4 unicast neighbors 1.1.1.1 routes vrf AAA:PROD_VRF
+
+! show all vrfs present on leaf
+show vrf
 ```
 
 Example from APIC:
@@ -134,6 +137,22 @@ Example from APIC:
 ```
 fabric 101 show bgp ipv4 unicast vrf AAA:PROD_VRF
 ```
+
+---
+### iPing and iTraceroute
+
+Traditional ping and traceroute from the switches only work in mgmt tenant/VRF. For any other VRF, you need to use iping and itraceroute (assumes valid L3 interface in VRF):
+
+iping example from leafs:
+
+```
+iping -V AAA:EXT_VRF 1.1.1.1
+```
+
+itraceroute example from leafs:
+
+```
+TBA, it's pretty dumb!
 
 ---
 ### Moquery
