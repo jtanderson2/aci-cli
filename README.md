@@ -26,7 +26,7 @@ Example from APIC:
 fabric 101 show port-channel summary
 ```
 
-Any commands that output a vlan (eg show mac address-table) will be referencing the internal vlan and not the encap used on leaf ports; use the follow command to translate:
+Any commands that output a vlan (eg 'show mac address-table') will be referencing the internal vlan and not the encap used on leaf ports; use the follow command to translate:
 
 ```
 show system internal epm vlan 20
