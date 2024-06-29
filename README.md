@@ -12,21 +12,21 @@ Many standard nxos commands work on the leaf switches or can be run from the api
 
 Examples from leafs:
 
-...
+```
 show port-channel summary
 show interface ethernet 1/24
 show mac address-table interface ethernet 1/24
-...
+```
 
 Example from APIC
 
-...
+```
 fabric 101 show port-channel summary
-...
+```
 
 Any commands that output a vlan (eg show mac address-table) will be referencing the internal vlan and not the encap used on leaf ports; use the follow command to translate:
 
-...
+```
 show system internal epm vlan 20
 
 +----------+---------+-----------------+----------+------+----------+-----------
@@ -34,7 +34,7 @@ show system internal epm vlan 20
                         (Type Value)     Encap                          Count
 +----------+---------+-----------------+----------+------+----------+-----------
  20           FD vlan 802.1Q         22 10413      55     14         5
-...
+```
 
 Where:
 - VLAN ID = internal VLAN
