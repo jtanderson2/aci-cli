@@ -96,7 +96,7 @@ Show detailed information fo APICs and cluster info; useful for troublshooting c
 acidiag avread
 ```
 
-Show vpc mappings across fabric (policy group - pc id - vpc -id - ports - leafs)
+Show vpc mappings across fabric (policy group - pc id - vpc -id - ports - leafs):
 
 ```
 show vpc map
@@ -113,7 +113,7 @@ Show physical domains, associated VLANs and which EPGs are using them:
 ```
 show vlan-domain
 show vlan-domain name BOB_PD
-show vlan-domain name BOB_PD details
+show vlan-domain name BOB_PD detail
 ```
 
 Show VMM domain EPGs and VLANS:
