@@ -1,10 +1,10 @@
 # Cisco ACI CLI
 
-Useful CLI commands to run from the APIC or switches to glean information around the configurational and operational state of the fabric. 
+Useful CLI commands to run from the APIC or switches to glean information around the configuration and operational state of the fabric. 
 
-> NOTE: The emulated NXOS running on the APIC can be used for confiugration purposes, though due to the complex underlying obect model it's easy to get in a muddle! My advice, stick to the GUI for configuration until you're ready to use the API!
+> NOTE: The emulated NXOS running on the APIC can be used for configuration purposes, though due to the complex underlying obect model it's easy to get in a muddle! My advice, stick to the GUI for configuration until you're ready to use the API!
 
-Lots still to add....
+Work in Progress....
 
 ---
 
@@ -92,9 +92,16 @@ https://learnwithsalman.com/aci-moquery/
 
 Some commands I use regularly:
 
-Find where vlan encaps are used on the fabric 
+Find where vlan encaps are used on the fabric (with regex matching which can be used with egrep and any APIC command)
 ```
-moquery -c fvIfConn | grep dn | egrep '\[vlan-210\]'
+! match any vlan starting 21
+moquery -c fvIfConn | grep dn | egrep 'vlan-21'
+
+! match exactly vlan 21
+moquery -c fvIfConn | grep dn | egrep '\[vlan-21\]'
+
+! match any vlan 13xx
+moquery -c fvIfConn | grep dn | egrep 'vlan-13[0-9]{2}\]'
 ```
 
 Display all instances of active faults for a given code:
