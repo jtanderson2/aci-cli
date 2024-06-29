@@ -18,7 +18,7 @@ show interface ethernet 1/24
 show mac address-table interface ethernet 1/24
 ```
 
-Example from APIC
+Example from APIC:
 
 ```
 fabric 101 show port-channel summary
@@ -41,5 +41,43 @@ Where:
 - Access  Encap = vlan used on leaf ports
 - Fabric encap = VXLAN Network Identifier (VNID)
 
+Show detailed information about endpoints; 'all' can be replaced with ip | mac | vlan | interface to drill down
 
+```
+show system internal epm endpoint all 
+```
 
+### NXOS L3 show commands
+
+VRF format is <TENANT>:<VRF>, except when running show commands in the underlay network, where it is just 'overlay-1' (obviously :-) 
+
+Examples from leafs:
+
+```
+show ip route vrf AAA:PROD_VRF
+show ip interface brief vrf AAA:PROD_VRF
+show bgp ipv4 unicast vrf AAA:PROD_VRF
+show bgp ipv4 unicast summary vrf AAA:PROD_VRF
+show bgp ipv4 unicast neighbors 1.1.1.1 advertised-routes vrf AAA:PROD_VRF
+show bgp ipv4 unicast neighbors 1.1.1.1 routes vrf AAA:PROD_VRF
+```
+
+Example from APIC:
+
+```
+fabric 101 show bgp ipv4 unicast vrf AAA:PROD_VRF
+```
+
+### Additional APIC Commands
+
+Show vpc mappings across fabric (policy group - pc id - vpc -id - ports - leafs)
+
+```
+show vpc map
+```
+
+Show running config on leaf (of limited use, but interesting!)
+
+```
+show running-config leaf 101
+```
