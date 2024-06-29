@@ -43,7 +43,7 @@ Where:
 - Access  Encap = vlan used on leaf ports
 - Fabric encap = VXLAN Network Identifier (VNID)
 
-Show detailed information about endpoints; 'all' can be replaced with ip | mac | vlan | interface to drill down
+Show detailed information about endpoints; 'all' can be replaced with 'ip, mac, vlan, interface' to drill down
 
 ```
 show system internal epm endpoint all 
@@ -96,7 +96,7 @@ Show detailed information fo APICs and cluster info; useful for troublshooting c
 acidiag avread
 ```
 
-Show vpc mappings across fabric (policy group - pc id - vpc -id - ports - leafs):
+Show VPC mappings across fabric (policy group - pc id - vpc id - ports - leafs):
 
 ```
 show vpc map
