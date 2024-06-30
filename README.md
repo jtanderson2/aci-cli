@@ -60,8 +60,8 @@ show tenant
  ---------------  ---------------  ----------------------------------------
  common
  DDD                              DDD Customer Tenant
- EEE								 EEE Customer Tenant
- FFF                               FFF Customer Tenant
+ EEE					    EEE Customer Tenant
+ FFF                              FFF Customer Tenant
  infra
  mgmt
 
@@ -74,10 +74,10 @@ show vrf
 
  Tenant      Vrf         Consumed Contracts    Provided Contracts    Description
  ----------  ----------  --------------------  --------------------  ----------------------------------------
- DDD      DDD VRF		-								-
- EEE       EEE_VRF		-								-
- FFF       FFF_VRF    	-								-
- common      copy        -                     			-
+ DDD         DDD VRF		-						-
+ EEE         EEE_VRF		-						-
+ FFF         FFF_VRF    	-						-
+ common      copy             -                     			-
  common      default
  infra       ave-ctrl    	-                    			-
  infra       overlay-1   	-                     			-
