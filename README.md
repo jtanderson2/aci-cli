@@ -74,7 +74,7 @@ show vmware domain name AAAVDS101 epg
 ---
 ### NXOS L1/L2 show commands
 
-Many standard nxos commands work on the leaf switches or can be run from the APIC when proceeding with 'fabric \<node-id\>'
+Many standard nxos commands work on the leaf switches or can be run from the APIC when preceding with 'fabric \<node-id\>'
 
 Examples from leafs:
 
