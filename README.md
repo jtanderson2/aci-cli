@@ -19,9 +19,9 @@ acidiag fnvread
 
       ID   Pod ID                 Name    Serial Number         IP Address    Role        State   LastUpdMsgId
 --------------------------------------------------------------------------------------------------------------
-     101        1         AAALSW101      F123456789   10.0.152.66/32    leaf         active   0
-     102        1         AAALSW102      G123456789   10.0.152.64/32    leaf         active   0
-     201        1         AAASSW201      H123456789   10.0.152.65/32    spine        active   0
+     101        1         AAALSW101      F123456789   10.0.0.66/32    leaf         active   0
+     102        1         AAALSW102      G123456789   10.0.0.64/32    leaf         active   0
+     201        1         AAASSW201      H123456789   10.0.0.65/32    spine        active   0
 ```
 
 Show overview of APICs and their health:
