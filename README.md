@@ -47,6 +47,8 @@ Show detailed information fo APICs and cluster info; useful for troubleshooting 
 
 ```
 acidiag avread
+
+! generates lots of output!
 ```
 
 Show tenant info:
