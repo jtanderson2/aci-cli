@@ -28,6 +28,19 @@ Show overview of APICs and their health:
 
 ```
 show controller
+
+Fabric Name          : AAAFabric
+Operational Size     : 1
+Cluster Size         : 1
+Time Difference      : -349
+Fabric Security Mode : PERMISSIVE
+
+ ID    Pod   Address          In-Band IPv4     In-Band IPv6               OOB IPv4         OOB IPv6                        Version             Flags  Serial Number     Health
+ ----  ----  ---------------  ---------------  -------------------------  ---------------  ------------------------------  ------------------  -----  ----------------  ------------------
+ 1*    1     10.0.0.1       0.0.0.0          fc00::1                    10.1.50.7        fe80::1a80:90ff:feff:7aae       4.2(7s)             crva-  F123456789       fully-fit
+
+Flags - c:Commissioned | r:Registered | v:Valid Certificate | a:Approved | f/s:Failover fail/success
+(*)Current (~)Standby (+)AS
 ```
 
 Show detailed information fo APICs and cluster info; useful for troubleshooting cluster issues:
@@ -40,12 +53,34 @@ Show tenant info:
 
 ```
 show tenant
+
+ Tenant           Tag              Description
+ ---------------  ---------------  ----------------------------------------
+ common
+ DDD                              DDD Customer Tenant
+ EEE								 EEE Customer Tenant
+ FFF                               FFF Customer Tenant
+ infra
+ mgmt
+
 ```
 
 Show VRFs and associated tenants:
 
 ```
 show vrf
+
+ Tenant      Vrf         Consumed Contracts    Provided Contracts    Description
+ ----------  ----------  --------------------  --------------------  ----------------------------------------
+ DDD      DDD VRF		-								-
+ EEE       EEE_VRF		-								-
+ FFF       FFF_VRF    	-								-
+ common      copy        -                     			-
+ common      default
+ infra       ave-ctrl    	-                    			-
+ infra       overlay-1   	-                     			-
+ mgmt        inb         	-                     			-
+ mgmt        oob         	-                     			-
 ```
 
 Show VPC mappings across fabric (policy group - pc id - vpc id - ports - leafs):
