@@ -159,7 +159,7 @@ iping -V AAA:PROD_VRF -S vlan123 1.1.1.1
 ---
 ### Moquery
 
-A CLI based tool running on the APIC to query the fabric via the REST API. This is a massive subject; this article is a great starting point and below a few examples I use regularly:
+A CLI based tool running on the APIC to query the fabric via the REST API. This is a massive subject; this article is a great starting point and below are a few examples I use regularly:
 
 https://learnwithsalman.com/aci-moquery/
 
