@@ -53,6 +53,22 @@ Show VPC mappings across fabric (policy group - pc id - vpc id - ports - leafs):
 
 ```
 show vpc map
+
+Legends:
+N/D : Not Deployed
+
+
+ Virtual Port-Channel Name         Domain      Virtual IP        Peer IP           VPC         Leaf Id, Name                     Fex Id      PC Id       Ports
+ --------------------------------  ----------  ----------------  ----------------  ----------  --------------------------------  ----------  ----------  --------------------
+ AAAHYP101-PG                   101         10.220.144.67/32  10.220.152.64/32  689         102,AAALSW102                              po6         eth1/27
+ AAAHYP101-PG                   101         10.220.144.67/32  10.220.152.66/32  689         101,AAALSW101                              po5         eth1/27
+
+ AAAHYP102-PG                   101         10.220.144.67/32  10.220.152.64/32  684         102,AAALSW102                              po7         eth1/29
+ AAAHYP102-PG                   101         10.220.144.67/32  10.220.152.66/32  684         101,AAALSW101                              po6         eth1/29
+
+ AAAHYP201-PG                   101         10.220.144.67/32  10.220.152.64/32  693         102,AAALSW102                              po9         eth1/13
+ AAAHYP201-PG                   101         10.220.144.67/32  10.220.152.66/32  693         101,AAALSW101                              po9         eth1/13
+
 ```
 
 Show running config on leaf (of limited use, but interesting!):
