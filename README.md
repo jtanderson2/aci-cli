@@ -49,6 +49,7 @@ show vrf
 ```
 
 Show VPC mappings across fabric (policy group - pc id - vpc id - ports - leafs):
+> ACI generates Po/vPC IDs dynamically based on the vPC Policy-Group, so this command is useful for finding what has been allocated
 
 ```
 show vpc map
