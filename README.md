@@ -9,8 +9,6 @@ Useful video explaining the various ACI CLI types:
 https://learnwithsalman.com/aci-cli/
 
 
-Far from comprehensive, work in progress...
-
 ---
 ### APIC Commands
 
