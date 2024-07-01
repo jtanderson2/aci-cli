@@ -43,12 +43,12 @@ Flags - c:Commissioned | r:Registered | v:Valid Certificate | a:Approved | f/s:F
 (*)Current (~)Standby (+)AS
 ```
 
-Show detailed information fo APICs and cluster info; useful for troubleshooting cluster issues:
+Show detailed information of APICs and cluster info; useful for troubleshooting cluster issues:
 
 ```
 acidiag avread
 
-! generates lots of output!
+! generates lots of output...
 ```
 
 Show tenant info:
