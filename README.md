@@ -206,9 +206,15 @@ iping -V AAA:PROD_VRF 1.1.1.1
 ! add source ip or interface
 iping -V AAA:PROD_VRF -S 2.2.2.2 1.1.1.1
 iping -V AAA:PROD_VRF -S vlan123 1.1.1.1
-
 ```
 
+---
+### Misc
+Show total local-scope vlans in use on a given leaf switch (10k is the max scalability limit, as calculated by the sum of all local-scope vlans presented to interfaces on the leaf; bad things can happen if you exceed this limit!)
+
+```
+vsh_lc -c 'show system internal eltmc info interface all' | awk  '/acc_vlan_bmp_count:/ {total += $2}; END {print total}'![image](https://github.com/user-attachments/assets/f1068a3f-8b3e-4ee6-80eb-bb974d211f06)
+```
 ---
 ### Moquery
 
