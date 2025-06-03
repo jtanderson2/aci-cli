@@ -239,8 +239,11 @@ Display all instances of active faults for a given code:
 moquery -c faultInst -f 'fault.Inst.code=="F0467"'
 ```
 
-A slightly longwinded way of finding all unused Interface Policy Groups across the fabric:
+A slightly longwinded way of finding all unused Interface Policy Groups across the fabric. The unused Policy Groups are the diff between the pg-inuse and pg-configured files that get created:
 ```
+bash
+cd /data/techsupport
+
 ! All policy groups in use on interface selectors:
  moquery -c infraHPortS -x query-target=subtree | grep PG | sed -n 's/.*acc\(portgrp\|bundle\)-\(.*\)/\2/p' | sort | uniq >> pg-inuse
 
@@ -248,7 +251,8 @@ A slightly longwinded way of finding all unused Interface Policy Groups across t
 moquery -c infraAccPortGrp | grep PG | sed -n 's/.*acc\(portgrp\|bundle\)-\(.*\)/\2/p' | sort | uniq >> pg-configured
 
 ! All vPC policy groups configured on the fabric:
-moquery -c infraAccBndlGrp | grep PG | sed -n 's/.*acc\(portgrp\|bundle\)-\(.*\)/\2/p' | sort | uniq >> pg-configured![image](https://github.com/user-attachments/assets/4a6f95d9-d928-459a-9596-332a08f67437)
+moquery -c infraAccBndlGrp | grep PG | sed -n 's/.*acc\(portgrp\|bundle\)-\(.*\)/\2/p' | sort | uniq >> pg-configured
+
 ```
 
 Find all FCS errors on ports across the fabric:
