@@ -239,7 +239,7 @@ Display all instances of active faults for a given code:
 moquery -c faultInst -f 'fault.Inst.code=="F0467"'
 ```
 
-A slightly longwinded way of finding all unused Interface Policy Groups across the fabric. The unused Policy Groups are the diff between the pg-inuse and pg-configured files that get created:
+A slightly long-winded way of finding all unused Interface Policy Groups across the fabric. The unused Policy Groups are the diff between the pg-inuse and pg-configured files that get created:
 ```
 bash
 cd /data/techsupport
