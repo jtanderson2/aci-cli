@@ -1,6 +1,6 @@
 # Cisco ACI CLI
 
-CLI commands to run from the APIC or switches to glean information around the configuration and operational state of the fabric. Quicker than the GUI in most cases and useful for troubleshooting and planning.
+CLI commands to run from the APIC or switches to glean information around the configuration and operational state of the fabric. Quicker than the GUI in most cases and useful for troubleshooting and planning. Far from comprehensive, but stuff I use often..
 
 > NOTE: The emulated NXOS running on the APIC can be used for configuration purposes, though due to the complex underlying obect model it's easy to get in a muddle! My advice, stick to the GUI for configuration until you're ready to use the API!
 
