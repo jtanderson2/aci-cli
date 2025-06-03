@@ -226,6 +226,9 @@ moquery -c fvIfConn | grep dn | egrep '\[vlan-21\]'
 
 ! match any vlan 13xx
 moquery -c fvIfConn | grep dn | egrep 'vlan-13[0-9]{2}\]'
+
+! find all FCS errors on ports across the fabric
+moquery -c rmonDot3Stats -f 'rmon.Dot3Stats.fCSErrors>="1"' | egrep "dn|fCSErrors" | egrep -o "\S+$" |  tr '\r\n' ' ' | sed -re 's/topology/\ntopology/g' | awk '{printf "%-65s %-15s\n", $1,$2}' | sort -rnk 2
 ```
 
 Display all instances of active faults for a given code:
